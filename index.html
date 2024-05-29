@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcola il tuo Preventivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CALCOLA IL TUO PREVENTIVO</h1>
+        <button onclick="showPreventivoPage()">Entra</button>
+    </div>
+    
+    <div id="preventivo-page" class="hidden">
+        <h1>CALCOLA IL TUO PREVENTIVO</h1>
+        <label for="caldaia">CALDAIA</label>
+        <select id="caldaia" onchange="updateCaldaiaPrice()">
+            <option value="">Seleziona...</option>
+            <option value="2600">BOSCH CERAPUR SMART ZWB 24-3</option>
+            <option value="2450">RIELLO START 25 KIS</option>
+            <option value="2950">BOSCH CERAPUR SMART ZWB 28-3</option>
+            <option value="2450">SAVIO INOXDENS MOON 25</option>
+            <option value="2350">BONGIOANNI PLAY 24</option>
+            <option value="2450">IMMERGAS VICTRIX TERA 24 V2</option>
+            <option value="2450">STANDARD INT 25</option>
+            <option value="2650">STANDARD INT 30</option>
+            <option value="2850">STANDARD INT 35</option>
+            <!-- Aggiungi altre opzioni qui -->
+        </select>
+        <span id="caldaia-price"></span>
+
+        <h2>ACCESSORI</h2>
+        <div id="accessori-container">
+            <div class="accessorio">
+                <select onchange="updateAccessorioPrice(this)">
+                    <option value="">Seleziona...</option>
+                    <option value="40">METRI INTUBAMENTO CANNA FUMARIA</option>
+                    <option value="185">DIFFERENZA PER TERMOSTATO WI-FI</option>
+                    <option value="60">NEUTRALIZZATORE DI CONDENSA</option>
+                    <option value="edit">SCARICO CONDENSA</option>
+                    <option value="135">KIT INTUBAMENTO COASSIALE MT 1</option>
+                    <option value="edit">LAVORAZIONI EXTRA</option>
+                    <!-- Aggiungi altre opzioni qui -->
+                  </select>
+                  <span class="accessorio-price"></span>
+                  <input type="number" placeholder="Prezzo in €" class="edit-price hidden" oninput="updateEditablePrice(this)">
+                  <input type="number" placeholder="Quantità" oninput="updateAccessorioTotal(this)">
+                  <span class="accessorio-total"></span>
+            </div>
+        </div>
+        <button onclick="addAccessorio()">Aggiungi Accessorio</button>
+
+        <h2>TIPOLOGIA VALVOLA</h2>
+        <div id="valvole-container">
+            <div class="valvola">
+                <select onchange="updateValvolaPrice(this)">
+                    <option value="">Seleziona...</option>
+                    <option value="45">TESTINA COMANDO TERMOSTATICO</option>
+                    <option value="65">VALVOLA TERMOSTATICA STANDARD</option>
+                    <option value="105">VALVOLA TERMOSTATICA MONOTUBO</option>
+                    <!-- Aggiungi altre opzioni qui -->
+                </select>
+                <span class="valvola-price"></span>
+                <input type="number" placeholder="Quantità" oninput="updateValvolaTotal(this)">
+                <span class="valvola-total"></span>
+            </div>
+        </div>
+        <button onclick="addValvola()">Aggiungi Valvola</button>
+
+        <button onclick="calcolaPreventivo()">CALCOLA PREVENTIVO</button>
+
+        <div id="riepilogo" class="hidden">
+            <h2>ECCO IL TUO PREVENTIVO</h2>
+            <div id="riepilogo-content"></div>
+            <div>
+                <span>TOTALE: </span><span id="totale"></span>
+            </div>
+            <div>
+                <span>TOT AL NETTO DELLA DETRAZIONE 65%: </span><span id="totale-netto"></span>
+            </div>
+            <div>
+                <span>Anticipo 50% con 36 rate: </span><span id="rata50"></span>
+            </div>
+            <div>
+                <span>Anticipo 35% con 24 rate: </span><span id="rata35"></span>
+            </div>
+            <button onclick="creaPDF()">CREA PDF</button>
+        </div>
+        <button onclick="showHomePage()">TORNA INDIETRO</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
