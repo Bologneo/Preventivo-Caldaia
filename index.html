@@ -23,6 +23,12 @@
             font-size: 0.8em;
             margin-top: 20px;
         }
+
+        /* Aggiunta del nuovo stile per il titolo "TIPOLOGIA VALVOLA" */
+        .valvola-title {
+            background-color: white;
+            padding: 10px; /* Aggiungi spaziatura intorno al testo se desiderato */
+        }
     </style>
 </head>
 <body>
@@ -70,7 +76,7 @@
         </div>
         <button onclick="addAccessorio()">Aggiungi Accessorio</button>
 
-        <h2>TIPOLOGIA VALVOLA</h2>
+        <h2 class="valvola-title">TIPOLOGIA VALVOLA</h2>
         <div id="valvole-container">
             <div class="valvola">
                 <select onchange="updateValvolaPrice(this)">
@@ -120,3 +126,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </body>
 </html>
+
