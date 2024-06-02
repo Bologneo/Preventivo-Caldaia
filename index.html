@@ -5,11 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcola il tuo Preventivo</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .center-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .large-button {
+            font-size: 2em; /* Ingrandisce il testo del pulsante */
+            padding: 20px 40px; /* Aumenta la dimensione del pulsante */
+        }
+
+        .footer {
+            text-align: center;
+            color: gray;
+            font-size: 0.8em;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>CALCOLA IL TUO PREVENTIVO</h1>
-        <button onclick="showPreventivoPage()">Entra</button>
+        <button class="large-button" onclick="showPreventivoPage()">Entra</button>
     </div>
     
     <div id="preventivo-page" class="hidden">
@@ -42,11 +61,11 @@
                     <option value="135">KIT INTUBAMENTO COASSIALE MT 1</option>
                     <option value="edit">LAVORAZIONI EXTRA</option>
                     <!-- Aggiungi altre opzioni qui -->
-                  </select>
-                  <span class="accessorio-price"></span>
-                  <input type="number" placeholder="Prezzo in €" class="edit-price hidden" oninput="updateEditablePrice(this)">
-                  <input type="number" placeholder="Quantità" oninput="updateAccessorioTotal(this)">
-                  <span class="accessorio-total"></span>
+                </select>
+                <span class="accessorio-price"></span>
+                <input type="number" placeholder="Prezzo in €" class="edit-price hidden" oninput="updateEditablePrice(this)">
+                <input type="number" placeholder="Quantità" oninput="updateAccessorioTotal(this)">
+                <span class="accessorio-total"></span>
             </div>
         </div>
         <button onclick="addAccessorio()">Aggiungi Accessorio</button>
@@ -66,9 +85,15 @@
                 <span class="valvola-total"></span>
             </div>
         </div>
-        <button onclick="addValvola()">Aggiungi Valvola</button>
+        
+        <div class="center-button">
+            <button onclick="addValvola()">Aggiungi Valvola</button>
+        </div>
 
-        <button onclick="calcolaPreventivo()">CALCOLA PREVENTIVO</button>
+        <div class="center-button">
+            <button onclick="calcolaPreventivo()">CALCOLA PREVENTIVO</button>
+            <button onclick="showHomePage()">TORNA INDIETRO</button>
+        </div>
 
         <div id="riepilogo" class="hidden">
             <h2>ECCO IL TUO PREVENTIVO</h2>
@@ -87,9 +112,11 @@
             </div>
             <button onclick="creaPDF()">CREA PDF</button>
         </div>
-        <button onclick="showHomePage()">TORNA INDIETRO</button>
     </div>
+    
+    <div class="footer">by ABolo</div>
 
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </body>
-</html><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</html>
