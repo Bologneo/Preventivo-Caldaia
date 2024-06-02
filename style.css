@@ -1,10 +1,10 @@
 body {
   font-family: Ayuthaya, sans-serif;
   background-image: url('background.jpeg'); /* Percorso dell'immagine */
-    background-size: cover; /* Adatta l'immagine all'intera finestra */
-    background-position: center; /* Centra l'immagine */
-    background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
-    background-attachment: fixed; /* Mantiene l'immagine fissa durante lo scroll */
+  background-size: 50%; /* Ridimensiona l'immagine al 50% */
+  background-position: center; /* Centra l'immagine */
+  background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+  background-attachment: fixed; /* Mantiene l'immagine fissa durante lo scroll */
 }
 
 .container, #preventivo-page {
