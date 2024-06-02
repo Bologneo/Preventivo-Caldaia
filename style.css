@@ -1,5 +1,10 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Ayuthaya, sans-serif;
+  background-image: url('background.jpeg'); /* Percorso dell'immagine */
+    background-size: cover; /* Adatta l'immagine all'intera finestra */
+    background-position: center; /* Centra l'immagine */
+    background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+    background-attachment: fixed; /* Mantiene l'immagine fissa durante lo scroll */
 }
 
 .container, #preventivo-page {
@@ -12,7 +17,7 @@ body {
 }
 
 button {
-  margin-top: 10px;
+  margin-top: 50px;
 }
 
 #riepilogo {
