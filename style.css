@@ -23,3 +23,8 @@ button {
 #riepilogo {
   margin-top: 20px;
 }
+
+.valvola-title {
+  background-color: white;
+  padding: 10px; /* Aggiungi spaziatura intorno al testo se desiderato */
+}
